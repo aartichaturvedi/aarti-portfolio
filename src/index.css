@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background-light: #FDFBF7;
+  --color-background-dark: #050505;
+  --color-celestial-gold: #EAB308;
+}
+
+/* This ensures the background actually fills the screen and transitions */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  @apply transition-colors duration-500 ease-in-out;
+}
+
+/* The "Sacred" Force: This maps the classes to the variables we defined above */
+.light {
+  background-color: var(--color-background-light) !important;
+  color: #1A1A1A !important;
+}
+
+.dark {
+  background-color: var(--color-background-dark) !important;
+  color: #F8F8F8 !important;
+}
+
+/* Glass card styling for your project blocks */
+.glass-card {
+  @apply backdrop-blur-md border border-celestial-gold/20 rounded-3xl p-8;
+  transition: all 0.3s ease;
+}
+
+.light .glass-card {
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+}
+
+.dark .glass-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.3);
+}
