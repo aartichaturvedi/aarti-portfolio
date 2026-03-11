@@ -8,78 +8,51 @@ const App = () => {
     if (isDark) {
       root.classList.add('dark');
       root.classList.remove('light');
-      root.style.backgroundColor = "#050505";
+      root.style.backgroundColor = "#0A0A0B"; // Obsidian Void
     } else {
       root.classList.add('light');
       root.classList.remove('dark');
-      root.style.backgroundColor = "#FDFBF7";
+      root.style.backgroundColor = "#F2F2F7"; // Cool Light Grey
     }
   }, [isDark]);
 
   const projects = [
-    { 
-      title: "Tirupati Divine Gateway", 
-      tag: "Sacred Foundation", 
-      desc: "Large-scale spiritual portal logic designed for pilgrimage management.",
-      link: "https://tirupati-divine-gateway.vercel.app/" 
-    },
-    { 
-      title: "The Heritage Museum", 
-      tag: "Cultural Art", 
-      desc: "Interactive Rajasthani history archive preserving local tradition.",
-      link: "https://the-heritage-museum.vercel.app/" 
-    },
-    { 
-      title: "Aetheris Oracle", 
-      tag: "Future Tech", 
-      desc: "AI-driven celestial application with advanced theme management.",
-      link: "https://aetheris-app.vercel.app/" 
-    }
+    { title: "Tirupati Divine Gateway", tag: "Divine Logic", desc: "A sanctuary for pilgrimage management.", link: "https://the-heritage-museum.lovable.app/" },
+    { title: "Heritage Museum", tag: "Cultural Heritage", desc: "Digital preservation of local history.", link: "https://the-heritage-museum.lovable.app/" },
+    { title: "Aetheris Oracle", tag: "AI Experience", desc: "Experimental UI with celestial states.", link: "https://aetheris-theta.vercel.app/" }
   ];
 
   return (
-    <div className={`min-h-screen transition-colors duration-500 p-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+    <div className={`min-h-screen transition-all duration-700 p-8 ${isDark ? 'text-slate-200' : 'text-slate-900'}`}>
       <nav className="flex justify-between items-center max-w-6xl mx-auto mb-20">
-        <h1 className="text-2xl tracking-[0.2em] font-serif text-[#EAB308]">AARTI CHATURVEDI</h1>
+        <h1 className="text-2xl font-bold tracking-tighter text-[#8B5CF6]">AARTI CHATURVEDI</h1>
         <button 
           onClick={() => setIsDark(!isDark)}
-          className="px-6 py-2 rounded-full border border-[#EAB308]/40 hover:bg-[#EAB308]/10 transition-all font-medium"
+          className={`px-6 py-2 rounded-xl border transition-all font-medium ${isDark ? 'border-[#8B5CF6]/40 hover:bg-[#8B5CF6]/10' : 'border-slate-400 hover:bg-slate-100'}`}
         >
-          {isDark ? '✨ SEEK LIGHT' : '🌑 SEEK VOID'}
+          {isDark ? '✨ EMERGE' : '🌑 WITHDRAW'}
         </button>
       </nav>
 
       <header className="max-w-4xl mx-auto text-center mb-32">
-        <h2 className="text-5xl md:text-7xl font-serif mb-6 leading-tight">
-          Modern Sanctuaries for <span className="italic text-[#EAB308]">Ancient Ideas</span>.
+        <h2 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
+          Crafting Digital <span className="text-[#8B5CF6]">Atmospheres</span>.
         </h2>
-        <p className="text-xl opacity-70">Jaipur-based Vibe Coder | Building for BCA 2026</p>
+        <p className="text-xl opacity-60">Front-End Developer | Jaipur, Rajasthan</p>
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {projects.map((p, i) => (
-          <div key={i} className={`p-8 rounded-3xl border border-[#EAB308]/20 backdrop-blur-md flex flex-col justify-between ${isDark ? 'bg-white/5' : 'bg-black/5 shadow-xl'}`}>
-            <div>
-              <span className="text-xs uppercase tracking-widest text-[#EAB308]">{p.tag}</span>
-              <h3 className="text-3xl font-serif mt-2 mb-4">{p.title}</h3>
-              <p className="opacity-60 mb-6">{p.desc}</p>
-            </div>
-            
-            <a 
-              href={p.link} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-[#EAB308] font-bold border-b border-[#EAB308] w-fit cursor-pointer hover:opacity-50 transition-opacity no-underline pb-1"
-            >
-              EXPLORE →
+          <div key={i} className={`p-8 rounded-[2rem] border transition-all duration-500 hover:scale-[1.02] ${isDark ? 'bg-white/5 border-white/10 hover:border-[#8B5CF6]/50' : 'bg-black/5 border-black/5 shadow-xl hover:border-[#8B5CF6]/30'}`}>
+            <span className="text-xs font-bold uppercase tracking-widest text-[#8B5CF6]">{p.tag}</span>
+            <h3 className="text-3xl font-bold mt-2 mb-4">{p.title}</h3>
+            <p className="opacity-60 mb-6 leading-relaxed">{p.desc}</p>
+            <a href={p.link} target="_blank" rel="noopener noreferrer" className="inline-block text-[#8B5CF6] font-bold group">
+              VIEW PROJECT <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
             </a>
           </div>
         ))}
       </div>
-
-      <footer className="mt-40 text-center opacity-40 text-sm italic">
-        Building the future in Jaipur, 2026.
-      </footer>
     </div>
   );
 };
