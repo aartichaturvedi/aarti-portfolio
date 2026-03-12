@@ -21,7 +21,7 @@ const App = () => {
       title: "Tirupati Divine Gateway", 
       tag: "Divine Logic", 
       desc: "A sanctuary for pilgrimage management.", 
-      link: "https://the-heritage-museum.lovable.app/",
+      link: "https://tirupati-divine-gateway.vercel.app/",
       color: "hover:border-amber-500/50", // Golden Temple Glow
       accent: "text-amber-500"
     },
@@ -29,7 +29,7 @@ const App = () => {
       title: "Heritage Museum", 
       tag: "Cultural Heritage", 
       desc: "Digital preservation of local history.", 
-      link: "https://the-heritage-museum.lovable.app/",
+      link: "https://the-heritage-museum.vercel.app/",
       color: "hover:border-stone-400/50", // Aesthetic Stone Glow
       accent: "text-stone-400"
     },
