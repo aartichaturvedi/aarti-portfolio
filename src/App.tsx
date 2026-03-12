@@ -37,7 +37,7 @@ const App = () => {
       title: "Aetheris Oracle", 
       tag: "AI Experience", 
       desc: "Experimental UI with celestial states.", 
-      link: "https://aetheris-theta.vercel.app/",
+      link: "https://aetheris-app.vercel.app/",
       color: "hover:border-indigo-500/50", // Cosmic Indigo Glow
       accent: "text-indigo-500"
     }
