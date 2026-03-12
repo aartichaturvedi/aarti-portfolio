@@ -17,9 +17,30 @@ const App = () => {
   }, [isDark]);
 
   const projects = [
-    { title: "Tirupati Divine Gateway", tag: "Divine Logic", desc: "A sanctuary for pilgrimage management.", link: "https://the-heritage-museum.lovable.app/" },
-    { title: "Heritage Museum", tag: "Cultural Heritage", desc: "Digital preservation of local history.", link: "https://the-heritage-museum.lovable.app/" },
-    { title: "Aetheris Oracle", tag: "AI Experience", desc: "Experimental UI with celestial states.", link: "https://aetheris-theta.vercel.app/" }
+    { 
+      title: "Tirupati Divine Gateway", 
+      tag: "Divine Logic", 
+      desc: "A sanctuary for pilgrimage management.", 
+      link: "https://the-heritage-museum.lovable.app/",
+      color: "hover:border-amber-500/50", // Golden Temple Glow
+      accent: "text-amber-500"
+    },
+    { 
+      title: "Heritage Museum", 
+      tag: "Cultural Heritage", 
+      desc: "Digital preservation of local history.", 
+      link: "https://the-heritage-museum.lovable.app/",
+      color: "hover:border-stone-400/50", // Aesthetic Stone Glow
+      accent: "text-stone-400"
+    },
+    { 
+      title: "Aetheris Oracle", 
+      tag: "AI Experience", 
+      desc: "Experimental UI with celestial states.", 
+      link: "https://aetheris-theta.vercel.app/",
+      color: "hover:border-indigo-500/50", // Cosmic Indigo Glow
+      accent: "text-indigo-500"
+    }
   ];
 
   return (
@@ -43,11 +64,14 @@ const App = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {projects.map((p, i) => (
-          <div key={i} className={`p-8 rounded-[2rem] border transition-all duration-500 hover:scale-[1.02] ${isDark ? 'bg-white/5 border-white/10 hover:border-[#8B5CF6]/50' : 'bg-black/5 border-black/5 shadow-xl hover:border-[#8B5CF6]/30'}`}>
-            <span className="text-xs font-bold uppercase tracking-widest text-[#8B5CF6]">{p.tag}</span>
+          <div 
+            key={i} 
+            className={`p-8 rounded-[2rem] border transition-all duration-500 hover:scale-[1.02] ${isDark ? 'bg-white/5 border-white/10' : 'bg-black/5 border-black/5 shadow-xl'} ${p.color}`}
+          >
+            <span className={`text-xs font-bold uppercase tracking-widest ${p.accent}`}>{p.tag}</span>
             <h3 className="text-3xl font-bold mt-2 mb-4">{p.title}</h3>
             <p className="opacity-60 mb-6 leading-relaxed">{p.desc}</p>
-            <a href={p.link} target="_blank" rel="noopener noreferrer" className="inline-block text-[#8B5CF6] font-bold group">
+            <a href={p.link} target="_blank" rel="noopener noreferrer" className={`inline-block font-bold group ${p.accent}`}>
               VIEW PROJECT <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
             </a>
           </div>
